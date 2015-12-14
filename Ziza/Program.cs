@@ -183,9 +183,9 @@ namespace Ziza
                         }
                                                    
                     }
-                    while (currentNode.data < tmp.data || tmp != null)
+                    while (currentNode.data <= tmp.data || tmp != null)
                     {
-                        if (currentNode.data < tmp.data)
+                        if (currentNode.data <= tmp.data)
                         {
                             Console.WriteLine(tmp.data);
                             tmp = tmp.next;
