@@ -76,7 +76,7 @@ namespace Ziza
                 headNode.addSorted(data);
            
         }
-        public void findNode(int data)
+        public void printNodeToLast(int data)
         {
             if (headNode == null)
                 Console.WriteLine("The list is empty");
@@ -168,7 +168,7 @@ namespace Ziza
             list.addToBeginning(6);
             list.addToBeginning(8);
             list.removeNode(6);
-            list.findNode(15);
+            list.printNodeToLast(15);
             Console.ReadKey();
         }
     }
