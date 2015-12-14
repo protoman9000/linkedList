@@ -151,6 +151,10 @@ namespace Ziza
                 count--;
             }
         }
+        public void positionNode(int data)
+        {
+
+        }
         public void Print()
         {
             if (headNode != null)
