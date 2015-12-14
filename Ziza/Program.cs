@@ -153,7 +153,54 @@ namespace Ziza
         }
         public void positionNode(int data)
         {
-
+            if (headNode == null)
+                Console.WriteLine("The list is empty.");
+            else
+            {
+                currentNode = headNode;
+                tmp = headNode;
+                while (currentNode != null && currentNode.data != data)
+                {
+                    tailNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+                if (currentNode.data == data)
+                {
+                    while (currentNode.data > headNode.data || headNode != null)
+                    {
+                        if (currentNode.data > headNode.data)
+                        {
+                            Console.WriteLine(headNode.data);
+                            headNode = headNode.next;
+                            if (headNode == null)
+                                break;
+                        }
+                        else
+                        {
+                            headNode = headNode.next;
+                            if (headNode == null)
+                                break;
+                        }
+                                                   
+                    }
+                    while (currentNode.data < tmp.data || tmp != null)
+                    {
+                        if (currentNode.data < tmp.data)
+                        {
+                            Console.WriteLine(tmp.data);
+                            tmp = tmp.next;
+                            if (tmp == null)
+                                break;
+                        }
+                        else
+                        {
+                            tmp = tmp.next;
+                            if (tmp == null)
+                                break;
+                        }                                                 
+                    }
+                }
+            }
         }
         public void Print()
         {
@@ -171,8 +218,7 @@ namespace Ziza
             list.addToBeginning(15);
             list.addToBeginning(6);
             list.addToBeginning(8);
-            list.removeNode(6);
-            list.printNodeToLast(15);
+            list.positionNode(6);
             Console.ReadKey();
         }
     }
