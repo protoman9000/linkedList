@@ -151,6 +151,10 @@ namespace Ziza
                 count--;
             }
         }
+        public void addNodes()
+        {
+
+        }
         public void positionNode(int data)
         {
             if (headNode == null)
@@ -213,11 +217,13 @@ namespace Ziza
         static void Main(string[] args)
         {
             myList list = new myList();
-            list.addToEnd(32);
-            list.addToEnd(5);
-            list.addToBeginning(15);
+            list.addToBeginning(4);
+            list.addToBeginning(7);
+            list.addToBeginning(1);
             list.addToBeginning(6);
             list.addToBeginning(8);
+            list.addToBeginning(2);
+            list.addNodes();
             list.positionNode(6);
             Console.ReadKey();
         }
