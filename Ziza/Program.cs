@@ -30,7 +30,27 @@ namespace Ziza
             }
             else
                 next.addSorted(data);
-        }        
+        }
+        public int countNode()
+        {
+            int count = 0;
+            if (next == null)
+            {
+                Console.WriteLine("The list is empty");
+                return count;
+            }
+
+            else
+            {
+                count++;
+                while (next != null)
+                {
+                    count++;
+                    next = next.next;
+                }
+                return count;
+            }
+        }
         public void Print()
         {
             Console.Write("|" + data + "|->");
@@ -151,9 +171,60 @@ namespace Ziza
                 count--;
             }
         }
+       
         public void addNodes()
         {
+            if (headNode == null)
+                Console.WriteLine("The list is empty");
+            else
+            {
+                Node tmp2 = null;
+                tmp2 = headNode;
+                int count = 0;
 
+                int[] list1 = new int[3];
+                int[] list2 = new int[3];
+                while (headNode != null && count <= 2)
+                {
+                    list1[count] = headNode.data;
+                    headNode = headNode.next;
+                    count++;
+                }
+
+                count = 0;
+
+                while (headNode != null && count <= 2)
+                {
+                    list2[count] = headNode.data;
+                    headNode = headNode.next;
+                    count++;
+                }
+
+                Array.Reverse(list1);
+                Array.Reverse(list2);
+
+                string input1 = "";
+                string input2 = "";
+
+                foreach (var l1 in list1)
+                {
+                    string convert = Convert.ToString(l1);
+                    input1 += convert;
+                }
+                foreach (var l2 in list2)
+                {
+                    string convert2 = Convert.ToString(l2);
+                    input2 += convert2;
+                }
+
+                int a = Convert.ToInt16(input1);
+                int b = Convert.ToInt16(input2);
+
+                int c = a + b;
+
+                Console.WriteLine("{0} + {1} = {2}", a, b, c);
+
+            }
         }
         public void positionNode(int data)
         {
